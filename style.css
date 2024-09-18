@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root{
+    /* ? background */
+    --mainBackground: hsl(222, 26%, 31%);
+    --toggleKeypadBackground:hsl(223, 31%, 20%);
+    --screenBackground:hsl(224, 36%, 15%);
+
+    /* ? keys */
+    --keyBackground:hsl(225, 32%, 58%);
+    --keyShadow: hsl(224, 28%, 35%);
+    --keyRed:hsl(6, 63%, 50%);
+    --keyRedShadow:hsl(6, 70%, 34%);
+    --keyWhite:hsl(30, 25%, 89%);
+    --KeyWhiteShadow: hsl(28, 16%, 65%);
+
+    /* ? text */
+    --textDark:hsl(221, 14%, 31%);
+    --textLight:hsl(0, 0%, 100%);
+    /* ? hover */
+    --hoverRed:rgb(255, 55, 55);
+    --hoverBlue:rgb(106, 157, 203);
+}
+/* Light mode variables */
+.light-mode {
+    --mainBackground: hsl(0, 0%, 90%);
+    --toggleKeypadBackground: hsl(0, 0%, 96%);
+    --screenBackground: hsl(0, 0%, 100%);
+    --keyBackground: hsl(185, 42%, 37%);
+    --keyShadow: hsl(185, 58%, 25%);
+    --keyRed: hsl(6, 63%, 50%);
+    --keyRedShadow: hsl(6, 70%, 34%);
+    --keyWhite: hsl(0, 0%, 100%);
+    --KeyWhiteShadow: hsl(35, 11%, 61%);
+    --textDark: hsl(0, 0%, 10%);
+    --textLight: hsl(221, 14%, 31%);
+    --hoverRed: rgb(255, 55, 55);
+    --hoverBlue: rgb(160, 200, 255);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--mainBackground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'League Spartan', sans-serif;
+}
+.main{
+    text-align: center;
+    padding: 20px 10px;
+}
+.NameToggle{
+    font-size: 30px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.NameToggle p,.NameToggle h3{
+    color: var(--textLight);
+}
+.screen input[type="text"]{
+    color: var(--textLight);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 15px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 40px;
+    background-color: var(--screenBackground);
+}
+.bodyCalc{
+    border-radius: 10px;
+    padding: 18px;
+    background-color: var(--toggleKeypadBackground);
+    
+}
+.bodyCalc .numbers{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    text-align: center;
+    margin: 10px ;
+    gap: 30px;
+    font-size: 36px;
+}
+.bodyCalc .numbers .grid-item{
+    user-select: none;
+    background-color: var(--keyWhite);
+    box-shadow: 0 3px 0px var(--KeyWhiteShadow);
+    padding: 10px 15px;
+    font-weight: 700;
+    border-radius: 15px;
+}
+.bodyCalc .numbers .grid-item:hover{
+    background-color: var(--textLight);
+    cursor: pointer;
+}
+.bodyCalc .btns{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bodyCalc .btns button{
+    width: 48%;
+    padding: 15px 0;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+}
+#delete , #restBtn{
+    background-color: var(--keyBackground);
+    box-shadow: 0 3px 0 var(--keyShadow);
+}
+#resultBtn{
+    box-shadow: 0 3px 0 var(--keyRedShadow);
+    background-color: var(--keyRed);
+}
+#resultBtn:hover{
+    background-color: var(--hoverRed);
+    cursor: pointer;
+}
+#delete:hover,#restBtn:hover{
+    cursor: pointer;
+    background-color:var(--hoverBlue) ;
+}
+#themeToggle{
+    background: var(--textDark);
+    color: var(--screenBackground);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#themeToggle i{
+    font-size: 20px;
+}
